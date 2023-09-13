@@ -110,9 +110,16 @@ body{
     top: -7px;
 }
 
-
 .titulo{
     text-align: left;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#titulo-margem {
+    padding-top: 3cm;
+    text-align: left;
+    text-transform: uppercase;
     font-size: 20px;
 }
 
@@ -154,11 +161,7 @@ article p {
     padding-bottom: 2cm;
 }
 
-#titulo-margem {
-    padding-top: 3cm;
-    text-align: left;
-    font-size: 20px;
-}
+
 
 .imagem{
     border-radius:10%;
@@ -191,4 +194,8 @@ article p {
     height: 8cm;
     text-align: center;
     display: block;
+}
+
+#img-russia {
+    border: 0.01px solid;
 }
