@@ -1,386 +1,407 @@
-/* ELEMENTOS */ 
+/* ELEMENTOS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #logo {
-    width: 5%;
+  width: 5%;
 }
 
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .lista-nav {
-    display: flex;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 20px 0 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 20px 0 20px 0;
 }
 
 .lista-nav > li > a {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 ul li {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 ul li a {
-    display: block;
-    padding: 8px 40px;
-    color: #000;
-    text-decoration: none;
-    text-align: left;
-    font-size: 16px;
+  display: block;
+  padding: 8px 40px;
+  color: #000;
+  text-decoration: none;
+  text-align: left;
+  font-size: 16px;
 }
 
 ul li ul.dropdown li {
-    display: block;
+  display: block;
 }
 
 ul li ul.dropdown {
-    width: 100%;
-    position: absolute;
-    z-index: 999;
-    display: none;
-    
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  display: none;
 }
-ul li ul.dropdown a{
-    opacity: .5;
+ul li ul.dropdown a {
+  opacity: 0.5;
 }
 
 ul li ul.dropdown a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 ul li:hover ul.dropdown {
-    display: block;
+  display: block;
 }
 
 .dropdown > li > a {
-    padding: 10px 50px 10px 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+  padding: 10px 50px 10px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 .dropdown > #margin-top-dropdown > a {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #seta-baixo {
-    display: inline-block;
-    position: relative;
-    bottom: 2px;
+  display: inline-block;
+  position: relative;
+  bottom: 2px;
 }
 
 #link-home:hover::after {
-    content: "";
-    height: 2px;
-    background-color: pink;
-    margin-left: 25px;
-    display: block;
-    width: 70%;
-    animation-name: hover-animation;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+  content: "";
+  height: 2px;
+  background-color: pink;
+  margin-left: 25px;
+  display: block;
+  width: 70%;
+  animation-name: hover-animation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes hover-animation {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 70%;
-    }
+  100% {
+    width: 70%;
+  }
 }
 
 .mouseSaiu::after {
-    content: "";
-    background-color: pink;
-    margin-left: 25px;
-    display: block;
-    animation-name: sair-animation;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+  content: "";
+  background-color: pink;
+  margin-left: 25px;
+  display: block;
+  animation-name: sair-animation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes sair-animation {
-    0% {
-        width: 70%;
-        height: 2px;
-    }
+  0% {
+    width: 70%;
+    height: 2px;
+  }
 
-    100% {
-        width: 0%;
-        height: 2px;
-    }
+  100% {
+    width: 0%;
+    height: 2px;
+  }
 }
 
-#link-belgica:hover::after, #link-congo:hover::after, #link-coreia:hover::after, #link-cuba:hover::after, #link-eua:hover::after, #link-israel:hover::after, #link-laos:hover::after, #link-russia:hover::after {
-    content: "";
-    height: 2px;
-    background-color: pink;
-    margin-top: 2px;
-    margin-left: 1px;
-    display: block;
-    width: 100%;
-    animation-name: dropdown-animations;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+#link-belgica:hover::after,
+#link-congo:hover::after,
+#link-coreia:hover::after,
+#link-cuba:hover::after,
+#link-eua:hover::after,
+#link-israel:hover::after,
+#link-laos:hover::after,
+#link-russia:hover::after {
+  content: "";
+  height: 2px;
+  background-color: pink;
+  margin-top: 2px;
+  margin-left: 1px;
+  display: block;
+  width: 100%;
+  animation-name: dropdown-animations;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes dropdown-animations {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 100%;
-    }
+  100% {
+    width: 100%;
+  }
 }
 
-.saiuBelgica::after, .saiuCongo::after, .saiuCoreia::after, .saiuCuba::after, .saiuEua::after, .saiuIsrael::after, .saiuLaos::after, .saiuRussia::after {
-    content: "";
-    background-color: pink;
-    margin-top: 2px;
-    margin-left: 1px;
-    display: block;
-    animation-name: sair-dropdown-animations;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+.saiuBelgica::after,
+.saiuCongo::after,
+.saiuCoreia::after,
+.saiuCuba::after,
+.saiuEua::after,
+.saiuIsrael::after,
+.saiuLaos::after,
+.saiuRussia::after {
+  content: "";
+  background-color: pink;
+  margin-top: 2px;
+  margin-left: 1px;
+  display: block;
+  animation-name: sair-dropdown-animations;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes sair-dropdown-animations {
-    0% {
-        width: 100%;
-        height: 2px;
-    }
+  0% {
+    width: 100%;
+    height: 2px;
+  }
 
-    100% {
-        width: 0%;
-        height: 2px;
-    }
+  100% {
+    width: 0%;
+    height: 2px;
+  }
 }
 
 #link-contato:hover::after {
-    content: "";
-    height: 2px;
-    margin-left: 25px;
-    background-color: pink;
-    width: 70%;
-    display: block;
-    animation: contato-animation .2s linear 1;
+  content: "";
+  height: 2px;
+  margin-left: 25px;
+  background-color: pink;
+  width: 70%;
+  display: block;
+  animation: contato-animation 0.2s linear 1;
 }
 
 @keyframes contato-animation {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 70%;
-    }
+  100% {
+    width: 70%;
+  }
 }
 
 .saiuContato::after {
-    content: "";
-    margin-left: 25px;
-    background-color: pink;
-    width: 70%;
-    display: block;
-    animation: sair-contato .2s linear 1;
+  content: "";
+  margin-left: 25px;
+  background-color: pink;
+  width: 70%;
+  display: block;
+  animation: sair-contato 0.2s linear 1;
 }
 
 @keyframes sair-contato {
-    0% {
-        width: 70%;
-        height: 2px;
-    }
+  0% {
+    width: 70%;
+    height: 2px;
+  }
 
-    100% {
-        width: 0%;
-        height: 2px;
-    }
+  100% {
+    width: 0%;
+    height: 2px;
+  }
 }
 
 #link-sobre:hover::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 70%;
-    margin-left: 22px;
-    background-color: pink;
-    animation: sobre-animation .2s linear 1;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 70%;
+  margin-left: 22px;
+  background-color: pink;
+  animation: sobre-animation 0.2s linear 1;
 }
 
 @keyframes sobre-animation {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 70%;
-    }
+  100% {
+    width: 70%;
+  }
 }
 
 .saiuSobre::after {
-    content: "";
-    display: block;
-    width: 70%;
-    margin-left: 22px;
-    background-color: pink;
-    animation: sair-sobre .2s linear 1;
+  content: "";
+  display: block;
+  width: 70%;
+  margin-left: 22px;
+  background-color: pink;
+  animation: sair-sobre 0.2s linear 1;
 }
 
 @keyframes sair-sobre {
-    0% {
-        width: 70%;
-        height: 2px;
-    }
+  0% {
+    width: 70%;
+    height: 2px;
+  }
 
-    100% {
-        width: 0%;
-        height: 2px;
-    }
+  100% {
+    width: 0%;
+    height: 2px;
+  }
 }
 
 main {
-    display: grid;
-    grid-template-areas:
-    "conteudo" "imagem";
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-areas: "conteudo" "imagem";
+  grid-template-columns: 1fr 1fr;
 }
 
 #conteudo-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #imagem-main {
-    grid-area: imagem;
+  grid-area: imagem;
 }
 
 #imagem-main > img {
-    width: 100%;
-    height: 90vh;
+  width: 100%;
+  height: 90vh;
 }
 
 .mouseSaiu::after {
-    content: "";
-    background-color: pink;
-    margin-left: 25px;
-    display: block;
-    animation-name: sair-animation;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+  content: "";
+  background-color: pink;
+  margin-left: 25px;
+  display: block;
+  animation-name: sair-animation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes sair-animation {
-    0% {
-        width: 70%;
-        height: 2px;
-    }
+  0% {
+    width: 70%;
+    height: 2px;
+  }
 
-    100% {
-        width: 0%;
-        height: 2px;
-    }
+  100% {
+    width: 0%;
+    height: 2px;
+  }
 }
 
-#link-belgica:hover::after, #link-congo:hover::after, #link-cuba:hover::after, #link-eua:hover::after, #link-israel:hover::after, #link-laos:hover::after {
-    content: "";
-    height: 2px;
-    background-color: pink;
-    margin-top: 2px;
-    margin-left: 1px;
-    display: block;
-    width: 100%;
-    animation-name: dropdown-animations;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+#link-belgica:hover::after,
+#link-congo:hover::after,
+#link-cuba:hover::after,
+#link-eua:hover::after,
+#link-israel:hover::after,
+#link-laos:hover::after {
+  content: "";
+  height: 2px;
+  background-color: pink;
+  margin-top: 2px;
+  margin-left: 1px;
+  display: block;
+  width: 100%;
+  animation-name: dropdown-animations;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes dropdown-animations {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 100%;
-    }
+  100% {
+    width: 100%;
+  }
 }
 
-.saiuBelgica::after, .saiuCongo::after, .saiuCuba::after, .saiuEua::after, .saiuIsrael::after, .saiuLaos::after {
-    content: "";
-    background-color: pink;
-    margin-top: 2px;
-    margin-left: 1px;
-    display: block;
-    animation-name: sair-dropdown-animations;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+.saiuBelgica::after,
+.saiuCongo::after,
+.saiuCuba::after,
+.saiuEua::after,
+.saiuIsrael::after,
+.saiuLaos::after {
+  content: "";
+  background-color: pink;
+  margin-top: 2px;
+  margin-left: 1px;
+  display: block;
+  animation-name: sair-dropdown-animations;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
 @keyframes sair-dropdown-animations {
-    0% {
-        width: 100%;
-        height: 2px;
-    }
+  0% {
+    width: 100%;
+    height: 2px;
+  }
 
-    100% {
-        width: 0%;
-        height: 2px;
-    }
+  100% {
+    width: 0%;
+    height: 2px;
+  }
 }
 
 #link-contato:hover::after {
-    content: "";
-    height: 2px;
-    margin-left: 25px;
-    background-color: pink;
-    width: 70%;
-    display: block;
-    animation: contato-animation .2s linear 1;
+  content: "";
+  height: 2px;
+  margin-left: 25px;
+  background-color: pink;
+  width: 70%;
+  display: block;
+  animation: contato-animation 0.2s linear 1;
 }
 
 @keyframes contato-animation {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 70%;
-    }
+  100% {
+    width: 70%;
+  }
 }
 
 .saiuContato::after {
-    content: "";
-    height: 2px;
-    margin-left: 25px;
-    background-color: pink;
-    width: 70%;
-    display: block;
-    
+  content: "";
+  height: 2px;
+  margin-left: 25px;
+  background-color: pink;
+  width: 70%;
+  display: block;
 }
