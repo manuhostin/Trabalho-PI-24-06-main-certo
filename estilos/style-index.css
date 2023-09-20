@@ -10,7 +10,6 @@
 }
 
 #header {
-    background-color:   ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,15 +54,18 @@ ul li ul.dropdown {
     position: absolute;
     z-index: 999;
     display: none;
+    
+}
+ul li ul.dropdown a{
     opacity: .5;
+}
+
+ul li ul.dropdown a:hover {
+    opacity: 1;
 }
 
 ul li:hover ul.dropdown {
     display: block;
-}
-
-#link-belgica:hover {
-    opacity: 1;
 }
 
 .dropdown > li > a {
@@ -89,7 +91,6 @@ ul li:hover ul.dropdown {
     margin-left: 25px;
     display: block;
     width: 70%;
-    transition: .5s;
     animation-name: hover-animation;
     animation-duration: .2s;
     animation-iteration-count: 1;
@@ -104,4 +105,105 @@ ul li:hover ul.dropdown {
     100% {
         width: 70%;
     }
+}
+
+.mouseSaiu::after {
+    content: "";
+    background-color: pink;
+    margin-left: 25px;
+    display: block;
+    animation-name: sair-animation;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes sair-animation {
+    0% {
+        width: 70%;
+        height: 2px;
+    }
+
+    100% {
+        width: 0%;
+        height: 2px;
+    }
+}
+
+#link-belgica:hover::after, #link-congo:hover::after, #link-cuba:hover::after, #link-eua:hover::after, #link-israel:hover::after, #link-laos:hover::after {
+    content: "";
+    height: 2px;
+    background-color: pink;
+    margin-top: 2px;
+    margin-left: 1px;
+    display: block;
+    width: 100%;
+    animation-name: dropdown-animations;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes dropdown-animations {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.saiuBelgica::after, .saiuCongo::after, .saiuCuba::after, .saiuEua::after, .saiuIsrael::after, .saiuLaos::after {
+    content: "";
+    background-color: pink;
+    margin-top: 2px;
+    margin-left: 1px;
+    display: block;
+    animation-name: sair-dropdown-animations;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes sair-dropdown-animations {
+    0% {
+        width: 100%;
+        height: 2px;
+    }
+
+    100% {
+        width: 0%;
+        height: 2px;
+    }
+}
+
+#link-contato:hover::after {
+    content: "";
+    height: 2px;
+    margin-left: 25px;
+    background-color: pink;
+    width: 70%;
+    display: block;
+    animation: contato-animation .2s linear 1;
+}
+
+@keyframes contato-animation {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+.saiuContato::after {
+    content: "";
+    height: 2px;
+    margin-left: 25px;
+    background-color: pink;
+    width: 70%;
+    display: block;
+    
 }
