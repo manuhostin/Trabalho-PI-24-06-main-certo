@@ -17,6 +17,7 @@ body{
 #logo {
     flex: 0 0 auto;
     margin-left: 47.5%;
+    width: 5%;
 }
 
 #nav {
@@ -198,4 +199,13 @@ article p {
 
 #img-russia {
     border: 0.01px solid;
+}
+
+#bandeira-urss {
+    border-radius: 5%;
+    height: 5cm;
+}
+
+ol > li {
+    margin: 5px;
 }

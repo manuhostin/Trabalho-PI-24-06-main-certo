@@ -28,6 +28,7 @@ img {
 #logo {
     flex: 0 0 auto;
     margin-left: 47.5%;
+    width: 5%;
 }
 
 #header {
@@ -187,6 +188,8 @@ div > p {
 
 .imagens-acontecimentos {
     border-radius: 10%;
+    width: 320px;
+    height: 210px;
 }
 
 .imagens-acontecimentos:hover {
