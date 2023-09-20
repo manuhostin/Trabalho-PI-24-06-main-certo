@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #logo {
@@ -105,6 +106,182 @@ ul li:hover ul.dropdown {
     100% {
         width: 70%;
     }
+}
+
+.mouseSaiu::after {
+    content: "";
+    background-color: pink;
+    margin-left: 25px;
+    display: block;
+    animation-name: sair-animation;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes sair-animation {
+    0% {
+        width: 70%;
+        height: 2px;
+    }
+
+    100% {
+        width: 0%;
+        height: 2px;
+    }
+}
+
+#link-belgica:hover::after, #link-congo:hover::after, #link-coreia:hover::after, #link-cuba:hover::after, #link-eua:hover::after, #link-israel:hover::after, #link-laos:hover::after, #link-russia:hover::after {
+    content: "";
+    height: 2px;
+    background-color: pink;
+    margin-top: 2px;
+    margin-left: 1px;
+    display: block;
+    width: 100%;
+    animation-name: dropdown-animations;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes dropdown-animations {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.saiuBelgica::after, .saiuCongo::after, .saiuCoreia::after, .saiuCuba::after, .saiuEua::after, .saiuIsrael::after, .saiuLaos::after, .saiuRussia::after {
+    content: "";
+    background-color: pink;
+    margin-top: 2px;
+    margin-left: 1px;
+    display: block;
+    animation-name: sair-dropdown-animations;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes sair-dropdown-animations {
+    0% {
+        width: 100%;
+        height: 2px;
+    }
+
+    100% {
+        width: 0%;
+        height: 2px;
+    }
+}
+
+#link-contato:hover::after {
+    content: "";
+    height: 2px;
+    margin-left: 25px;
+    background-color: pink;
+    width: 70%;
+    display: block;
+    animation: contato-animation .2s linear 1;
+}
+
+@keyframes contato-animation {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+.saiuContato::after {
+    content: "";
+    margin-left: 25px;
+    background-color: pink;
+    width: 70%;
+    display: block;
+    animation: sair-contato .2s linear 1;
+}
+
+@keyframes sair-contato {
+    0% {
+        width: 70%;
+        height: 2px;
+    }
+
+    100% {
+        width: 0%;
+        height: 2px;
+    }
+}
+
+#link-sobre:hover::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 70%;
+    margin-left: 22px;
+    background-color: pink;
+    animation: sobre-animation .2s linear 1;
+}
+
+@keyframes sobre-animation {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+.saiuSobre::after {
+    content: "";
+    display: block;
+    width: 70%;
+    margin-left: 22px;
+    background-color: pink;
+    animation: sair-sobre .2s linear 1;
+}
+
+@keyframes sair-sobre {
+    0% {
+        width: 70%;
+        height: 2px;
+    }
+
+    100% {
+        width: 0%;
+        height: 2px;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+    "conteudo" "imagem";
+    grid-template-columns: 1fr 1fr;
+}
+
+#conteudo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagem-main {
+    grid-area: imagem;
+}
+
+#imagem-main > img {
+    width: 100%;
+    height: 90vh;
 }
 
 .mouseSaiu::after {
