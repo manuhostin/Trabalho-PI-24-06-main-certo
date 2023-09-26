@@ -1,407 +1,221 @@
-/* ELEMENTOS */
-* {
+/* ELEMENTOS */ 
+
+body, ul {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+img {
+  max-width: 100%;
+  display: flex;
+}
+
+/* LINKS */
+
+#btn-mobile {
+  display: block;
+}
+
 #logo {
+  flex: 0 0 auto;
+  margin-left: 47.5%;
   width: 5%;
 }
 
 #header {
+  background-color: #1B33BF;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
-.lista-nav {
-  display: flex;
-  justify-content: flex-start;
-  list-style: none;
-  padding: 20px 0 20px 0;
-}
-
-.lista-nav > li > a {
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-ul {
-  list-style: none;
-}
-
-ul li {
-  display: inline-block;
-  position: relative;
-}
-
-ul li a {
+#menu {
   display: block;
-  padding: 8px 40px;
-  color: #000;
-  text-decoration: none;
-  text-align: left;
-  font-size: 16px;
-}
-
-ul li ul.dropdown li {
-  display: block;
-}
-
-ul li ul.dropdown {
-  width: 100%;
   position: absolute;
-  z-index: 999;
-  display: none;
-}
-ul li ul.dropdown a {
-  opacity: 0.5;
-}
-
-ul li ul.dropdown a:hover {
-  opacity: 1;
-}
-
-ul li:hover ul.dropdown {
-  display: block;
+  width: 100%;
+  top: 13%;
+  right: 0px;
+  height: 0;
+  padding-top: 20px;
+  transition: .5s;
+  background: #0460D9;
+  z-index: 1000;
+  visibility: hidden;
+  overflow-y: hidden;
+  text-align: center;
 }
 
-.dropdown > li > a {
-  padding: 10px 50px 10px 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+#nav.active #menu {
+  height: calc(100vh - 70px);        display: block;
+  visibility: visible;
+  overflow-y: auto;
 }
 
-.dropdown > #margin-top-dropdown > a {
+#menu li {
   margin-top: 20px;
+  list-style: none;
+  text-decoration: none;
 }
 
-#seta-baixo {
+#menu a {
   display: inline-block;
-  position: relative;
-  bottom: 2px;
+  padding: 1rem 0;
+  color: white;
+  border-bottom: 2px solid #217df5;
+  width: 20%;
+  text-decoration: none;
+  list-style: none;
 }
-
-#link-home:hover::after {
-  content: "";
-  height: 2px;
-  background-color: pink;
-  margin-left: 25px;
-  display: block;
-  width: 70%;
-  animation-name: hover-animation;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-
-@keyframes hover-animation {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 70%;
-  }
-}
-
-.mouseSaiu::after {
-  content: "";
-  background-color: pink;
-  margin-left: 25px;
-  display: block;
-  animation-name: sair-animation;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-
-@keyframes sair-animation {
-  0% {
-    width: 70%;
-    height: 2px;
-  }
-
-  100% {
-    width: 0%;
-    height: 2px;
-  }
-}
-
-#link-belgica:hover::after,
-#link-congo:hover::after,
-#link-coreia:hover::after,
-#link-cuba:hover::after,
-#link-eua:hover::after,
-#link-israel:hover::after,
-#link-laos:hover::after,
-#link-russia:hover::after {
-  content: "";
-  height: 2px;
-  background-color: pink;
-  margin-top: 2px;
-  margin-left: 1px;
-  display: block;
-  width: 100%;
-  animation-name: dropdown-animations;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-
-@keyframes dropdown-animations {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
-.saiuBelgica::after,
-.saiuCongo::after,
-.saiuCoreia::after,
-.saiuCuba::after,
-.saiuEua::after,
-.saiuIsrael::after,
-.saiuLaos::after,
-.saiuRussia::after {
-  content: "";
-  background-color: pink;
-  margin-top: 2px;
-  margin-left: 1px;
-  display: block;
-  animation-name: sair-dropdown-animations;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-
-@keyframes sair-dropdown-animations {
-  0% {
-    width: 100%;
-    height: 2px;
-  }
-
-  100% {
-    width: 0%;
-    height: 2px;
-  }
-}
-
-#link-contato:hover::after {
-  content: "";
-  height: 2px;
-  margin-left: 25px;
-  background-color: pink;
-  width: 70%;
-  display: block;
-  animation: contato-animation 0.2s linear 1;
-}
-
-@keyframes contato-animation {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 70%;
-  }
-}
-
-.saiuContato::after {
-  content: "";
-  margin-left: 25px;
-  background-color: pink;
-  width: 70%;
-  display: block;
-  animation: sair-contato 0.2s linear 1;
-}
-
-@keyframes sair-contato {
-  0% {
-    width: 70%;
-    height: 2px;
-  }
-
-  100% {
-    width: 0%;
-    height: 2px;
-  }
-}
-
-#link-sobre:hover::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 70%;
-  margin-left: 22px;
-  background-color: pink;
-  animation: sobre-animation 0.2s linear 1;
-}
-
-@keyframes sobre-animation {
-  0% {
-    width: 0%;
-  }
-
-  100% {
-    width: 70%;
-  }
-}
-
-.saiuSobre::after {
-  content: "";
-  display: block;
-  width: 70%;
-  margin-left: 22px;
-  background-color: pink;
-  animation: sair-sobre 0.2s linear 1;
-}
-
-@keyframes sair-sobre {
-  0% {
-    width: 70%;
-    height: 2px;
-  }
-
-  100% {
-    width: 0%;
-    height: 2px;
-  }
-}
-
-main {
-  display: grid;
-  grid-template-areas: "conteudo" "imagem";
-  grid-template-columns: 1fr 1fr;
-}
-
-#conteudo-section {
+#btn-mobile {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: .5rem;
+  color: white;
 }
 
-#imagem-main {
-  grid-area: imagem;
-}
-
-#imagem-main > img {
-  width: 100%;
-  height: 90vh;
-}
-
-.mouseSaiu::after {
-  content: "";
-  background-color: pink;
-  margin-left: 25px;
+#hamburguer {
   display: block;
-  animation-name: sair-animation;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
+  width: 20px;
+  border-top: 2px solid;
 }
 
-@keyframes sair-animation {
-  0% {
-    width: 70%;
-    height: 2px;
-  }
-
-  100% {
-    width: 0%;
-    height: 2px;
-  }
-}
-
-#link-belgica:hover::after,
-#link-congo:hover::after,
-#link-cuba:hover::after,
-#link-eua:hover::after,
-#link-israel:hover::after,
-#link-laos:hover::after {
-  content: "";
+#hamburguer::after, #hamburguer::before {
+  content: '';
+  display: block;
+  width: 20px;
   height: 2px;
-  background-color: pink;
-  margin-top: 2px;
-  margin-left: 1px;
-  display: block;
-  width: 100%;
-  animation-name: dropdown-animations;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
+  background: currentColor;
+  margin-top: 5px;
+  transition: .3s;
+  position: relative;
 }
 
-@keyframes dropdown-animations {
-  0% {
-    width: 0%;
+#nav.active #hamburguer {
+  border-top-color: transparent;
+}
+
+#nav.active #hamburguer::before {
+  transform: rotate(135deg);
+}
+
+#nav.active #hamburguer::after {
+  transform: rotate(-135deg);
+  top: -7px;
+}
+
+/*  RESPONSIVIDADE */
+
+@media (max-width: 810px) {
+
+  #titulo {
+      font-size: 2em;
+      margin-right: -4%;
   }
 
-  100% {
-    width: 100%;
-  }
-}
-
-.saiuBelgica::after,
-.saiuCongo::after,
-.saiuCuba::after,
-.saiuEua::after,
-.saiuIsrael::after,
-.saiuLaos::after {
-  content: "";
-  background-color: pink;
-  margin-top: 2px;
-  margin-left: 1px;
-  display: block;
-  animation-name: sair-dropdown-animations;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-
-@keyframes sair-dropdown-animations {
-  0% {
-    width: 100%;
-    height: 2px;
+  .flex {
+      justify-content: center;
   }
 
-  100% {
-    width: 0%;
-    height: 2px;
-  }
-}
-
-#link-contato:hover::after {
-  content: "";
-  height: 2px;
-  margin-left: 25px;
-  background-color: pink;
-  width: 70%;
-  display: block;
-  animation: contato-animation 0.2s linear 1;
-}
-
-@keyframes contato-animation {
-  0% {
-    width: 0%;
+  .flex img {
+      width: 100%;
   }
 
-  100% {
-    width: 70%;
+  #menu {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 95px;
+      right: 0px;
+      height: 0;
+      padding-top: 20px;
+      transition: .5s;
+      background: #0460D9;
+      z-index: 1000;
+      visibility: hidden;
+      overflow-y: hidden;
+      text-align: center;
   }
+
+  #logo {
+      flex: 0 0 auto;
+      margin-left: 42%;
+      width: 62.750px;
+  }
+  
 }
 
-.saiuContato::after {
-  content: "";
-  height: 2px;
-  margin-left: 25px;
-  background-color: pink;
-  width: 70%;
-  display: block;
+/* CSS FLEXBOX */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
 }
+
+.flex > div {
+  flex: 1 1 200px;
+  margin: 10px 20px 10px 10px;
+}
+
+div > p {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#titulo {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: -5%;
+}
+
+.imagens-acontecimentos {
+  width: 320px;
+  height: 210px;
+  border-radius: 10%;
+}
+
+.imagens-acontecimentos:hover {
+  transform: scale(1.2); transition: .3s; cursor: pointer; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* ELEMENTO ÂNCORA */
+
+  .saiba810 { 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #1dd432;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(72,211,89, .4);
+      color: #ffffff;
+      width: 300px;
+      height: 70px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  .saiba810:hover {
+      background-color: #0aa328;
+      transition: .4s;
+  }
